@@ -23,7 +23,7 @@ import rva.repository.FakultetRepository;
 
 @CrossOrigin
 @RestController
-@Api(tags = {"Fakultet CRUD operacije"})
+@Api(tags = { "Fakultet CRUD operacije" })
 public class FakultetRestController {
 
 	@Autowired
@@ -76,15 +76,17 @@ public class FakultetRestController {
 	}
 
 	// DELETING FROM DATABASE
-	//@Transactional //problem prilikom brisanja ovog sa -100!
+	// @Transactional //problem prilikom brisanja ovog sa -100!
 	@DeleteMapping("fakultet/{id}")
 	@ApiOperation(value = "Brisanje fakulteta sa prosledjenom vrednoscu id-a iz baze podataka")
 	public ResponseEntity<Fakultet> deleteFakultet(@PathVariable("id") Integer id) {
 		if (!fakultetRepository.existsById(id)) {
 			return new ResponseEntity<Fakultet>(HttpStatus.NO_CONTENT);
 		} else {
-			
+			jdbcTemplate
+					.execute("Delete from student where departman in (select id from departman where fakultet= " + id+")");
 			jdbcTemplate.execute("DELETE FROM departman WHERE fakultet=" + id);
+			
 			fakultetRepository.deleteById(id);
 			if (id == -100) {
 				jdbcTemplate.execute("INSERT INTO \"fakultet\" (\"id\", \"naziv\", \"sediste\")"

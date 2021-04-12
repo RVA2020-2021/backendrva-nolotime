@@ -41,9 +41,9 @@ ALTER TABLE status ADD CONSTRAINT pk_status PRIMARY KEY(id);
 ALTER TABLE departman ADD CONSTRAINT pk_departman PRIMARY KEY(id);
 ALTER TABLE student ADD CONSTRAINT pk_student PRIMARY KEY(id);
 
-ALTER TABLE departman ADD CONSTRAINT fk_departman_fakultet FOREIGN KEY(fakultet) REFERENCES fakultet(id);
-ALTER TABLE student ADD CONSTRAINT fk_student_status FOREIGN KEY(status) REFERENCES status(id);
-ALTER TABLE student ADD CONSTRAINT fk_student_departman FOREIGN KEY(departman) REFERENCES departman(id);
+ALTER TABLE departman ADD CONSTRAINT fk_departman_fakultet FOREIGN KEY(fakultet) REFERENCES fakultet(id) on delete cascade;
+ALTER TABLE student ADD CONSTRAINT fk_student_status FOREIGN KEY(status) REFERENCES status(id) on delete cascade;
+ALTER TABLE student ADD CONSTRAINT fk_student_departman FOREIGN KEY(departman) REFERENCES departman(id) on delete cascade;
 
 CREATE INDEX idxpk_fakultet ON fakultet(id);
 CREATE INDEX idxpk_status ON status(id);
