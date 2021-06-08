@@ -1,0 +1,63 @@
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  margin: auto 0;
+  padding: 20px;
+  /*centriranje sadrzaja*/
+  justify-content: center;
+  text-align: center;
+}
+
+.container > h1 {
+  font-size: 50px;
+  font-family: "Libre Baskerville", serif;
+  letter-spacing: 0.15em;
+}
+
+.grid-custom {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 0.17em;
+  grid-row-gap: 0.17em;
+  grid-template-rows: repeat(3, 2fr);
+  padding: 10px 10px;
+}
+
+.grid-item {
+  min-height: fit-content;
+  overflow: hidden;
+}
+
+.big-item {
+  grid-column: 1 / 4;
+  font-family: "Libre Baskerville", serif;
+  justify-content: center;
+  text-align: center;
+}
+
+.big-item > h2 {
+  font-size: 24px;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  min-height: 100%;
+}
+
+.grid-image {
+  transition: transform 750ms cubic-bezier(0.5, 0, 0.5, 1), opacity 250ms linear;
+}
+
+.grid-item:focus {
+  position: relative;
+  z-index: 2;
+}
+
+.grid-image:hover,
+.grid-item:focus .grid-image {
+  transform: scale(1.2);
+  opacity: 0.75;
+}
