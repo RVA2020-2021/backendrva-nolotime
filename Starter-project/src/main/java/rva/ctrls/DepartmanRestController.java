@@ -44,6 +44,12 @@ public class DepartmanRestController {
 	public Departman getDepartmanByID(@PathVariable("id") Integer id) {
 		return departmanRepository.getOne(id);
 	}
+	
+	@GetMapping("departmaniFakulteta/{id}")
+	public Collection<Departman> getAllDepartmaniForFakultet(@PathVariable("id") Integer id){
+		System.out.print("Departmani fakulteta");
+		return departmanRepository.findByFakultet_id(id);
+	}
 
 	@GetMapping("departmanNaziv/{naziv}")
 	@ApiOperation(value = "Vraca kolekciju svih departmana koji u svom nazivu sadrze prosledjenu rec/i, iz baze podataka")

@@ -1,44 +1,44 @@
 --Fakultet Podaci
 insert into "fakultet"
-	values(1, 'Fakultet Tehnickih Nauka', 'Novi Sad');
+	values(nextval('fakultet_seq'), 'Fakultet Tehnickih Nauka', 'Novi Sad');
 insert into "fakultet"
-	values(2, 'Pravni Fakultet', 'Novi Sad');
+	values(nextval('fakultet_seq'), 'Pravni Fakultet', 'Novi Sad');
 insert into "fakultet"
-	values(3, 'Medicinski Fakultet', 'Novi Sad');
+	values(nextval('fakultet_seq'), 'Medicinski Fakultet', 'Novi Sad');
 insert into "fakultet"
-	values(4, 'Akademija Umetnosti', 'Novi Sad');
+	values(nextval('fakultet_seq'), 'Akademija Umetnosti', 'Novi Sad');
 insert into "fakultet"
-	values(5, 'Fakultet Organizacionih Nauka', 'Beograd');
+	values(nextval('fakultet_seq'), 'Fakultet Organizacionih Nauka', 'Beograd');
 	
 --Status Podaci
 insert into "status"
-	values(1, 'Budzetski','budzet');
+	values(nextval('status_seq'), 'Budzetski','budzet');
 insert into "status"
-	values(2, 'Samofinansirajuci','samofin');
+	values(nextval('status_seq'), 'Samofinansirajuci','samofin');
 	
 --Departman Podaci
 insert into "departman"
-	values(1, 'Departman za industrijsko inzenjerstvo i menadzment', 'IIM', 1);
+	values(nextval('departman_seq'), 'Departman za industrijsko inzenjerstvo i menadzment', 'IIM', 1);
 insert into "departman"
-	values(2, 'Departman za racunarstvo i automatiku', 'RA', 1);
+	values(nextval('departman_seq') , 'Departman za racunarstvo i automatiku', 'RA', 1);
 insert into "departman"
-	values(3, 'Departman za arhitekturu i urbanizam', 'AU', 1);
+	values(nextval('departman_seq'), 'Departman za arhitekturu i urbanizam', 'AU', 1);
 insert into "departman"
-	values(4, 'Departman za gradjevinu i geodeziju', 'GG', 1);
+	values(nextval('departman_seq'), 'Departman za gradjevinu i geodeziju', 'GG', 1);
 	
 --Student Podaci
 insert into "student"
-	values(1, 'Mason', 'Mount', 'IT19/2020', 1, 1);
+	values(nextval('student_seq'), 'IT19/2020','Mason', 'Mount',  1, 1);
 insert into "student"
-	values(2, 'Milan', 'Novcic', 'IT12/2018', 1, 1);
+	values(nextval('student_seq'), 'IT12/2018','Milan', 'Novcic',  1, 1);
 insert into "student"
-	values(3, 'Davor', 'Jelic', 'IT11/2018', 1, 1);
+	values(nextval('student_seq'), 'IT11/2018','Davor', 'Jelic',  1, 1);
 insert into "student"
-	values(4, 'Stefan', 'Bulaja', 'IT2/2018', 1, 1);
+	values(nextval('student_seq'), 'IT2/2018','Stefan', 'Bulaja',  1, 1);
 insert into "student"
-	values(5, 'Veselko', 'Vasic', 'AH49/2018', 2, 2);
+	values(nextval('student_seq'), 'AH49/2018','Veselko', 'Vasic',  2, 2);
 insert into "student"
-	values(6, 'Lazar', 'Vranjes', 'RA20/2020', 1, 2);
+	values(nextval('student_seq'), 'RA20/2020','Lazar', 'Vranjes',  1, 2);
 	
 --TEST PODACI
 insert into "fakultet"

@@ -8,4 +8,5 @@ import rva.jpa.Departman;
 
 public interface DepartmanRepository extends JpaRepository<Departman, Integer> {
 	Collection<Departman> findByNazivContainingIgnoreCase(String naziv);
+	Collection<Departman> findByFakultet_id(Integer id);
 }

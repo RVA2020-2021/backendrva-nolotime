@@ -76,7 +76,7 @@ public class FakultetRestController {
 	}
 
 	// DELETING FROM DATABASE
-	// @Transactional //problem prilikom brisanja ovog sa -100!
+	//@Transactional //problem prilikom brisanja ovog sa -100!
 	@DeleteMapping("fakultet/{id}")
 	@ApiOperation(value = "Brisanje fakulteta sa prosledjenom vrednoscu id-a iz baze podataka")
 	public ResponseEntity<Fakultet> deleteFakultet(@PathVariable("id") Integer id) {
