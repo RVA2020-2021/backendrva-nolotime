@@ -57,8 +57,8 @@ export class fakultetComponent implements OnInit, OnDestroy, OnChanges{
     this.dataSource.filter = filter;
   }
 
-  public openDialog(flag: number, id?: number, naziv?: string, proizvodjac?: string): void {
-    const dialogRef = this.dialog.open(FakultetDialogComponent, {data: {id,naziv,proizvodjac}});
+  public openDialog(flag: number, id?: number, naziv?: string, sediste?: string): void {
+    const dialogRef = this.dialog.open(FakultetDialogComponent, {data: {id,naziv,sediste}});
     dialogRef.componentInstance.flag = flag;
     dialogRef.afterClosed().subscribe(res => {
       if(res == 1) {
